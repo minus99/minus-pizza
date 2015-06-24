@@ -1,0 +1,10 @@
+
+
+/* Defaults */
+.none{display:none;}
+.hidden{visibility:hidden;}
+.opaque{opactity:0;}
+.left{float:left;}
+.right{float:right;}
+.clearfix{clear:both;}
+.fixed{position:fixed;}

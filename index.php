@@ -4,7 +4,10 @@
 
   $page = (isset($_GET['p'])) ? $_GET['p'] : 'home';
   
-  include($page.'.php');
+  if(file_exists($page.'.php'))
+    include($page.'.php');
+  else
+    include('404.php');
   
 ?>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/main.css" type="text/css">
-<title>Untitled Document</title>
+<title>pizza</title>
 </head>
 <body>
 <div id="wrapper">
@@ -11,9 +11,9 @@
     <section class="headerTop"></section>
     <section class="headerBottom">
       <div class="left">
-        <div class="mobile back-adr"> <a class="btnDefault btnHdrBack" href="#">back</a> <a class="btnDefault btnHdrAdr" href="#">address</a> </div>
-        <div class="adrHolder"></div>
-        <div class="mobile mLogo"></div>
+        <a class="btnDefault btnHdrBack" href="#">back</a>
+        <div class="adrHolder"><a class="btnDefault btnHdrAdr" href="#">address</a></div>
+        <div class="mobile-logo"></div>
       </div>
       <div class="right">
         <div class="basketHolder"></div>
@@ -21,3 +21,4 @@
       </div>
     </section>
   </header>
+  <div id="body">
