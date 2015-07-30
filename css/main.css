@@ -1,5 +1,3 @@
-
-
 /* Defaults */
 .none{display:none;}
 .hidden{visibility:hidden;}
@@ -8,3 +6,137 @@
 .right{float:right;}
 .clearfix{clear:both;}
 .fixed{position:fixed;}
+
+/*/////////////////////////////////////////      FONT      /////////////////////////////////////////*/
+
+/* Pizzahut Font */ 
+
+@font-face {
+    font-family: 'usc-medium';
+    src: url('../css/fonts/usc/UnitedSansSemiCond-Medium_gdi.eot');
+    src: url('../css/fonts/usc/UnitedSansSemiCond-Medium_gdi.eot?#iefix') format('embedded-opentype'),
+         url('../css/fonts/usc/UnitedSansSemiCond-Medium_gdi.woff2') format('woff2'),
+         url('../css/fonts/usc/UnitedSansSemiCond-Medium_gdi.woff') format('woff'),
+         url('../css/fonts/usc/UnitedSansSemiCond-Medium_gdi.ttf') format('truetype'),
+         url('../css/fonts/usc/UnitedSansSemiCond-Medium_gdi.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'usc-bold';
+    src: url('../css/fonts/usc/UnitedSansSemiCond-Bold_gdi.eot');
+    src: url('../css/fonts/usc/UnitedSansSemiCond-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+         url('../css/fonts/usc/UnitedSansSemiCond-Bold_gdi.woff2') format('woff2'),
+         url('../css/fonts/usc/UnitedSansSemiCond-Bold_gdi.woff') format('woff'),
+         url('../css/fonts/usc/UnitedSansSemiCond-Bold_gdi.ttf') format('truetype'),
+         url('../css/fonts/usc/UnitedSansSemiCond-Bold_gdi.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+ 
+/* Helvetica Font */ 
+ 
+@font-face {
+    font-family: 'helvetica-light';
+    src: url('../css/fonts/helvetica/helveticaltstdlight.eot');
+    src: url('../css/fonts/helvetica/helveticaltstdlight.eot?#iefix') format('embedded-opentype'),
+         url('../css/fonts/helvetica/helveticaltstdlight.woff2') format('woff2'),
+         url('../css/fonts/helvetica/helveticaltstdlight.woff') format('woff'),
+         url('../css/fonts/helvetica/helveticaltstdlight.ttf') format('truetype'),
+         url('../css/fonts/helvetica/helveticaltstdlight.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'helvetica-bold';
+    src: url('../css/fonts/helvetica/helveticaltstdbold.eot');
+    src: url('../css/fonts/helvetica/helveticaltstdbold.eot?#iefix') format('embedded-opentype'),
+         url('../css/fonts/helvetica/helveticaltstdbold.woff2') format('woff2'),
+         url('../css/fonts/helvetica/helveticaltstdbold.woff') format('woff'),
+         url('../css/fonts/helvetica/helveticaltstdbold.ttf') format('truetype'),
+         url('../css/fonts/helvetica/helveticaltstdbold.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* TL Font */
+
+@font-face {
+    font-family: 'tl';
+    src: url('../css/fonts/tl/abakutlsymsans.eot');
+    src: url('../css/fonts/tl/abakutlsymsans.eot?#iefix') format('embedded-opentype'),
+         url('../css/fonts/tl/abakutlsymsans.woff2') format('woff2'),
+         url('../css/fonts/tl/abakutlsymsans.woff') format('woff'),
+         url('../css/fonts/tl/abakutlsymsans.ttf') format('truetype'),
+         url('../css/fonts/tl/abakutlsymsans.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+ 
+/*/////////////////////////////////////////      GENEL      /////////////////////////////////////////*/
+
+* {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	font-family:'usc-bold';
+	font-size:13px;
+	color:#FFF;
+	font-weight:400;
+	font-style:normal;
+	text-align:left;
+	line-height:1;
+	margin:0;
+	padding:0;
+	border:none;
+	outline:none;
+	vertical-align:baseline;
+	text-decoration:none;
+	list-style:none
+}
+
+
+/*/////////////////////////////////////////      GENERAL      /////////////////////////////////////////*/
+
+body {background:#1b1b1a url(../images/pageBg.jpg) repeat-y center top;}
+.right {float:right;}
+.left {float:left;}
+
+/*/////////////////////////////////////////      ICON      /////////////////////////////////////////*/
+
+.icon1 {background: url(../images/sprite.png) no-repeat 0 0;}
+
+/*/////////////////////////////////////////      PIZZAHUT CSS      /////////////////////////////////////////*/
+
+.wrappers {max-width:1100px; margin:0 auto; position:relative;}
+
+/*/////////////////////////////////////////      PIZZAHUT CSS      /////////////////////////////////////////*/
+
+
+.productList{width:100%; padding-left:210px;}
+.productList .main{width:100%; min-height:500px;}
+.productList .main > h3{color:#FFF; font-size:56px; font-family:'usc-medium'; border-bottom: 1px solid #707070; padding: 20px 0 10px 0;}
+.productList .main > ul li{color:#FFF; font-size:12px;}
+ 
+.fixedPanel{position:fixed; top:0; z-index:3; min-width:130px}
+.fixedPanel ul.lvl1{position:relative}
+.fixedPanel ul.lvl1 > li{position:absolute; width:100%}
+.fixedPanel ul.lvl1 > li .sub{height:0; overflow:hidden;}
+.fixedPanel ul.lvl1 > li.active .sub{height:auto; margin-top:30px;}
+.fixedPanel ul.lvl1 > li .lvl2{padding-left:20px; opacity:0; -webkit-transition: opacity 222ms ease-in-out; -moz-transition: opacity 222ms ease-in-out;-o-transition: opacity 222ms ease-in-out; transition: opacity 222ms ease-in-out;}
+.fixedPanel ul.lvl1 > li.active .lvl2{opacity:1;}
+.fixedPanel ul.lvl1 > li.active .lvl2 li {line-height:25px;}
+.fixedPanel ul.lvl1 > li .lvl2 li span{color:#fff; font-size:15px;}
+.fixedPanel ul.lvl1 > li a:hover{text-decoration:none}
+.fixedPanel ul.lvl1 > li > a span{font-size:14px; line-height:25px; -webkit-transition: all 222ms ease-in-out; -moz-transition: all 222ms ease-in-out;-o-transition: all 222ms ease-in-out; transition: all 222ms ease-in-out;}
+.fixedPanel ul.lvl1 > li.active > a span{font-size:30px; padding-left: 20px; position:relative;}
+.fixedPanel ul.lvl1 > li.active > a:before {content:''; width:10px; height:13px; background:url(../images/sprite.png) -47px -53px no-repeat; position:absolute; left:0px; top:6px; display:block;}
+

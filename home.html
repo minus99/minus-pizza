@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Fixed Navigation</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="bodyWrapper">
+
+<!-- Page Header -->
+
+<div class="pageHeader">
+	
+	<div class="logo"></div>
+	<div class="mobileCol"></div>
+
+</div>
+
+<!-- Page Content -->
+
+<div class="wrappers">
+  <div class="filters"></div>
+  <div class="productList">
+    <div class="main camp" data-title="KAMPANYALAR">
+      <h3>KAMPANYALAR</h3>
+      <ul>
+        <li data-title="1 KISILIK" data-class="pr-1">PARTY BOX</li>
+        <li data-title="2-3 KISILIK" data-class="pr-2">SÜPER MENÜ</li>
+        <li data-title="4-5 KISILIK" data-class="pr-3-4">SUCUK KEYFİ MENÜ</li>
+        <li data-title="5+ KISILIK" data-class="pr-5">COMBO BOX</li>
+      </ul>
+    </div>
+    <div class="main" data-title="PİZZALAR">
+      <h3>PİZZALAR</h3>
+      <div class="sub" data-title="SEBZE KEYFİ">
+        <h4>SEBZE KEYFİ</h4>
+        <ul>
+          <li>MARGHERITA</li>
+          <li>AKDENİZ PİZZA</li>
+          <li>SEBZESEVER</li>
+        </ul>
+      </div>
+      <div class="sub" data-title="SUCUK KEYFİ">
+        <h4>SUCUK KEYFİ</h4>
+        <ul>
+          <li>SULTAN</li>
+        </ul>
+      </div>
+      <div class="sub" data-title="ET KEYFİ">
+        <h4>ET KEYFİ</h4>
+      </div>
+      <div class="sub" data-title="DÜNYA KEYFİ">
+        <h4>DÜNYA KEYFİ</h4>
+      </div>
+    </div>
+    <div class="main" data-title="SALATALAR">
+      <h3>SALATALAR</h3>
+    </div>
+    <div class="main" data-title="BAŞLANGIÇLAR">
+      <h3>BAŞLANGIÇLAR</h3>
+    </div>
+    <div class="main" data-title="TATLILAR">
+      <h3>TATLILAR</h3>
+    </div>
+    <div class="main" data-title="İÇECEKLER">
+      <h3>İÇECEKLER</h3>
+    </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+
+/////////////////////////////////////////////////////////
+
+var win = $(window), doc = $(document), wt = parseFloat( win.width() ),  ht = parseFloat( win.height() ), wst = parseFloat( win.scrollTop() ), sRatio = 0;
+
+/////////////////////////////////////////////////////////
+
+var fixedNav = {
+	padding: 0,
+	panelWrp: '.fixedPanel ul.lvl1',
+	panel: '.fixedPanel ul.lvl1 > li',
+	panelBtn: '.fixedPanel ul.lvl1 a',
+	wrp: '.productList',
+	el: '.productList .main[data-title]',
+	pageScroll: function( k, callback ){
+		$('html, body')
+		.stop()
+		.animate({ scrollTop: k }, 222, 'linear', function(){ if( callback != undefined ) callback();  });
+	},
+	detectEl: function( ID ){ 
+		return ID.length > 0 ? true : false; 
+	},
+	addEvent: function(){
+		var _t = this, btn = $( _t.panelBtn );
+		if( btn.length > 0 )
+			btn.bind('click', function(){
+				var prt = $( this ).parent('li'), title = prt.data('title'), e = $( _t.wrp + ' [data-title="'+ title+'"]');
+				if( e.length > 0 )
+					_t.pageScroll( e.offset().top );
+			});
+	},
+	add: function( k ){
+		var _t = this, wrp = $( _t.wrp );
+		if( wrp.length > 0 )
+			wrp.before( k );
+	},
+	template: function( ID ){ 
+		var _t = this, html = '<div class="fixedPanel"><ul class="lvl1">';
+		
+		$.each(ID, function(){
+			var _this = $( this ), title = _this.data('title') || '', cls = _this.data('class') || '', e = $('[data-title]', _this);
+			html += '<li data-title="'+ title +'" class="'+ cls +'"><a href="javascript:void(0);"><span>'+ title +'</span><i></i></a>';
+			if( _t.detectEl( e ) ){
+				html += '<div class="sub"><ul class="lvl2">';
+				$.each(e, function(){
+					var _this = $( this), title = _this.data('title') || '', cls = _this.data('class') || '';
+					html += '<li data-title="'+ title +'" class="'+ cls +'"><a href="javascript:void(0);"><span>'+ title +'</span><i></i></a></li>';
+				});
+				html += '</ul></div>';
+			}
+			html += '</li>';
+		});
+		
+		html += '</ul></div>';
+		
+		return html;
+	},
+	getH: function( ind, ord ){
+		var _t = this, panel = $( _t.panel );
+		if( _t.detectEl( panel ) ){		
+			var h = 0;
+			if( ord == 'asc' ){
+				for( var i = 0; i < panel.length; i++ ){
+					if( ind == i ) break;
+					h+= panel.eq( i ).outerHeight( true );
+				}
+			}else if( ord == 'desc' ){
+				for( var j = panel.length; j > 0; j-- ){
+					h+= panel.eq( j ).outerHeight( true );
+					if( ind == j ) break;
+				}
+			}else{
+				for( var i = 0; i < panel.length; i++ )
+					h+= panel.eq( i ).outerHeight( true );
+			}
+			return h;
+		}
+	},
+	onResize: function(){
+		var _t = this, panelWrp = $( _t.panelWrp );
+		if( _t.detectEl( panelWrp ) )
+			panelWrp.height( _t.getH() + _t.padding );
+		
+	},
+	onScroll: function(){
+		var _t = this, panel = $( _t.panel ), padding = _t.padding, el = $( _t.el );
+		if( _t.detectEl( panel ) ){
+			var ind = -1;
+			el.each(function( index, _this ){ 		
+				var _this = $( this ), subM =  panel.eq( index ).find('.lvl2'), he = _this.outerHeight( true ) - ( subM.length > 0 ? ( subM.outerHeight( true ) * 2 ) : 0 ), pos = _this.position().top, asc = _t.getH( index, 'asc' ), desc = _t.getH( index, 'desc' ) + padding;
+				if( pos > wst + asc && pos < wst + ht - desc ) panel.eq( index ).stop().css('top', pos - wst);
+				else if( pos - asc <= wst ) panel.eq( index ).stop().css('top', asc);
+				else if( pos > wst + ht - desc ) panel.eq( index ).stop().css('top', ht - desc);
+				
+				if( wst >= pos && wst <= pos + he ) ind = index;			
+			});
+			
+			if( ind == -1 ){
+				el.removeClass('active');
+				panel.removeClass('active');
+			}else{
+				el.eq( ind ).addClass('active').siblings().removeClass('active');
+				panel.eq( ind ).addClass('active').siblings().removeClass('active');
+			}
+			
+		}
+	},
+	init: function(){
+		var _t = this, el = $( _t.el );
+		if( _t.detectEl( el ) ){
+			_t.add( _t.template( el ) );
+			_t.addEvent();
+		}
+	}
+};
+
+fixedNav.init();
+
+/////////////////////////////////////////////////////////
+
+var events =
+{
+	
+	init: function(){
+	
+	},
+	
+	onResize: function(){
+		wt = parseFloat( win.width() );
+		ht = parseFloat( win.height() );
+		
+		fixedNav.onResize();
+		fixedNav.onScroll();
+	},
+	
+	onScroll: function(){
+		wst = parseFloat( win.scrollTop() );
+		sRatio = wst / ( doc.height() - ht );
+		
+		fixedNav.onScroll();
+	
+	}
+	
+};
+
+win.load( events.init );
+win.resize( events.onResize ).resize();
+win.scroll( events.onScroll ).scroll();	
+
+
+
+
+
+</script>
+</body>
+</html>

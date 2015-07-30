@@ -1,0 +1,102 @@
+/*/////////////////////////////////////////      FONT      /////////////////////////////////////////*/
+
+/* Pizzahut Font */ 
+
+@font-face {
+    font-family: 'usc-medium';
+    src: url('../styles/fonts/usc/UnitedSansSemiCond-Medium_gdi.eot');
+    src: url('../styles/fonts/usc/UnitedSansSemiCond-Medium_gdi.eot?#iefix') format('embedded-opentype'),
+         url('../styles/fonts/usc/UnitedSansSemiCond-Medium_gdi.woff2') format('woff2'),
+         url('../styles/fonts/usc/UnitedSansSemiCond-Medium_gdi.woff') format('woff'),
+         url('../styles/fonts/usc/UnitedSansSemiCond-Medium_gdi.ttf') format('truetype'),
+         url('../styles/fonts/usc/UnitedSansSemiCond-Medium_gdi.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'usc-bold';
+    src: url('../styles/fonts/usc/UnitedSansSemiCond-Bold_gdi.eot');
+    src: url('../styles/fonts/usc/UnitedSansSemiCond-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+         url('../styles/fonts/usc/UnitedSansSemiCond-Bold_gdi.woff2') format('woff2'),
+         url('../styles/fonts/usc/UnitedSansSemiCond-Bold_gdi.woff') format('woff'),
+         url('../styles/fonts/usc/UnitedSansSemiCond-Bold_gdi.ttf') format('truetype'),
+         url('../styles/fonts/usc/UnitedSansSemiCond-Bold_gdi.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+ 
+/* Helvetica Font */ 
+ 
+@font-face {
+    font-family: 'helvetica-light';
+    src: url('../styles/fonts/helvetica/helveticaltstdlight.eot');
+    src: url('../styles/fonts/helvetica/helveticaltstdlight.eot?#iefix') format('embedded-opentype'),
+         url('../styles/fonts/helvetica/helveticaltstdlight.woff2') format('woff2'),
+         url('../styles/fonts/helvetica/helveticaltstdlight.woff') format('woff'),
+         url('../styles/fonts/helvetica/helveticaltstdlight.ttf') format('truetype'),
+         url('../styles/fonts/helvetica/helveticaltstdlight.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'helvetica-bold';
+    src: url('../styles/fonts/helvetica/helveticaltstdbold.eot');
+    src: url('../styles/fonts/helvetica/helveticaltstdbold.eot?#iefix') format('embedded-opentype'),
+         url('../styles/fonts/helvetica/helveticaltstdbold.woff2') format('woff2'),
+         url('../styles/fonts/helvetica/helveticaltstdbold.woff') format('woff'),
+         url('../styles/fonts/helvetica/helveticaltstdbold.ttf') format('truetype'),
+         url('../styles/fonts/helvetica/helveticaltstdbold.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* TL Font */
+
+@font-face {
+    font-family: 'tl';
+    src: url('../styles/fonts/tl/abakutlsymsans.eot');
+    src: url('../styles/fonts/tl/abakutlsymsans.eot?#iefix') format('embedded-opentype'),
+         url('../styles/fonts/tl/abakutlsymsans.woff2') format('woff2'),
+         url('../styles/fonts/tl/abakutlsymsans.woff') format('woff'),
+         url('../styles/fonts/tl/abakutlsymsans.ttf') format('truetype'),
+         url('../styles/fonts/tl/abakutlsymsans.svg#UnitedSansSemiCond-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+ 
+/*/////////////////////////////////////////      GENEL      /////////////////////////////////////////*/
+
+* {
+	-moz-box-sizing:border-box; 
+	-webkit-box-sizing:border-box; 
+	box-sizing:border-box;
+	font-family:'usc-bold';
+	font-size:13px; color:#000; font-weight:400; font-style:normal;
+	text-align:left; 
+	line-height:1;
+	margin:0;
+	padding:0;
+	border:none;
+	outline:none;
+	vertical-align: baseline; 
+	text-decoration:none;
+	list-style:none;
+}
+
+/*/////////////////////////////////////////      GENERAL      /////////////////////////////////////////*/
+
+body {background:#1b1b1a url(../images/pageBg.jpg) repeat-y center top;}
+.right {float:right;}
+.left {float:left;}
+
+/*/////////////////////////////////////////      ICON      /////////////////////////////////////////*/
+
+.icon1 {background: url(../images/sprite.png) no-repeat 0 0;}
