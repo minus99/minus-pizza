@@ -138,7 +138,7 @@ body {background:#1b1b1a url(../images/pageBg.jpg) repeat-y center top;}
 
 /* Mini Basket */
 
-.pageHeader .miniBasket {width:100%; display:inline-block; float:right;}
+.pageHeader .miniBasket {width:100%; display:inline-block;}
 
 /**/
 
@@ -256,9 +256,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 
 .footerWrapper .copyright {width:100%; display:inline-block; font-size:12px; font-family: 'helvetica-light'; margin-top:30px; color:#999;}
 
-/*/////////////////////////////////////////      HOME PAGE      /////////////////////////////////////////*/
-
-.homePage .pageHeader .miniBasket {width:auto;}
-.homePage .pageHeader .miniBasket .miniBasketLeft {display:none;}
-.homePage .pageHeader .login {display:none;}
-.homePage .homeSlider {height:510px;}
