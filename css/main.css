@@ -258,7 +258,62 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 
 /*/////////////////////////////////////////      HOME PAGE      /////////////////////////////////////////*/
 
+.homePage .pageHeader {padding-top:45px;}
 .homePage .pageHeader .miniBasket {width:auto;}
 .homePage .pageHeader .miniBasket .miniBasketLeft {display:none;}
 .homePage .pageHeader .login {display:none;}
-.homePage .homeSlider {height:510px;}
+
+/**/
+
+.homePage .homeSlider {width:100%; text-align:center; position:relative;}
+.homePage .homeSlider .slider {max-width:1100px; width:100%; max-height: 510px; overflow: hidden; padding:0px; margin:0 auto; position:relative; display:block;}
+.homePage .homeSlider .sliderImg {float:right; margin-right:70px;}
+.homePage .homeSlider .sliderText {position: absolute; top: 80px; left: 70px;} 
+
+/**/
+
+.homePage .homeSlider .sliderNav {width:100%; text-align:center; position:absolute; bottom:0; background:rgba(0,0,0,0.5);}
+.homePage .homeSlider .sliderNav .navInner {max-width:1100px; width:100%; display:block; margin:0 auto;}
+.homePage .homeSlider .sliderNav ul li {float:left; width:25%; text-align:center; border-right:1px solid #7f7f7f;}
+.homePage .homeSlider .sliderNav ul li:last-child {border:0;}
+.homePage .homeSlider .sliderNav ul li a {width:100%; padding:10px 15px; display:inline-block;}
+.homePage .homeSlider .sliderNav ul li a.active {background:rgba(220,40,50,0.8);}
+.homePage .homeSlider .sliderNav ul li i {margin-right:15px; opacity:0.5;}
+.homePage .homeSlider .sliderNav ul li  a.active i {opacity:1;}
+.homePage .homeSlider .sliderNav ul li span {font-size:14px;}
+.homePage .mainBox {width:100%; text-align:center; background: url(../images/pageGrey.jpg) no-repeat 0 0; background-size:cover;}
+.homePage .mainBox .boxBanner {max-width:1160px; padding:60px 20px 60px 10px; margin:0 auto; position:relative; display:inline-block;}
+.homePage .mainBox .boxBanner ul li {float:left; padding:10px; overflow:hidden;}
+.homePage .mainBox .boxBanner ul li img {}
+.homePage .mainBox .boxBanner ul li.boxBig {width:50%;}
+.homePage .mainBox .boxBanner ul li.boxNormal {width:25%;}
+
+/* Populer Slider - Favorite */
+
+.tabSlider {width:100%; text-align:center; position:relative;}
+.tabSlider .tabBtn {max-width:1100px; width:100%; text-align:center; display:block; margin:0 auto;}
+.tabSlider .tabBtn ul {display:inline-block;}
+.tabSlider .tabBtn ul li {float:left;}
+.tabSlider .tabBtn ul li:first-child {margin-right:50px;}
+.tabSlider .tabBtn ul li  a {display:inline-block; margin:45px 0 50px 0; position:relative;}
+.tabSlider .tabBtn ul li  a.active:after {top: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(136, 183, 213, 0); border-top-color: #ec3b45; border-width: 7px; margin-left: -7px;}
+.tabSlider .tabBtn ul li  a h4 {font-size:25px; font-family: 'usc-medium'; text-shadow: 3px 3px 5px #000000;}
+.tabSlider .tabBtn ul li  a.active  h4 {padding-bottom:10px; border-bottom:2px solid #ec3b45;}
+.tabSlider .populerSlider {width: 100%; max-width: 1110px; text-align:center; padding: 0 80px; margin:0 auto 80px auto; position:relative; display:block;}
+.tabSlider .populerSlider ul {display:inline-block; overflow:hidden; box-shadow: 1px 2px 2px 2px rgba(0,0,0,0.6);}
+.tabSlider .populerSlider ul li img {width:100%; float:left;}
+.tabSlider .populerSlider .navBtn {position:absolute; top:45%; width:100%; left:0;}
+.tabSlider .populerSlider .navBtn a i {width:22px; height:34px; background-image:url(../images/sprite.png); display:block;}
+.tabSlider .populerSlider .navBtn a.nextBtn {float:right; margin-right:20px;}
+.tabSlider .populerSlider .navBtn a.prevBtn {float:left; margin-left:20px;}
+.tabSlider .populerSlider .navBtn a.nextBtn i {background-position: -78px -127px;}
+.tabSlider .populerSlider .navBtn a.prevBtn i {background-position: -55px -127px;}
+
+/*/////////////////////////////////////////      MOBILE      /////////////////////////////////////////*/
+
+@media only screen and (max-width:780px) {
+
+.smartHeader {width:100%; height:70px; background:url(../images/pageRed.jpg) center top no-repeat;}
+.smartHeader > i.mmenu {width:35px; height:23px; background-position:0 -195px; display:inline-block; float:left;}
+
+}
