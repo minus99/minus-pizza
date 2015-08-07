@@ -55,11 +55,87 @@
 <!-- Mobil Header -->
 
 <div class="smartHeader">
-<i class="icon mmenu"></i>
-<div class="smartBasket"><a href="/sepet/sepetim.aspx"><i class="icon2">&nbsp;</i></a></div>
-<div class="resLogo"><a href="/"><img src="images/logo_res.png" border="0"></a></div>
+<a href="javascript:void(0);" class="mmenu"><i class="icon"></i></a>
+<div class="smartBasket">
+<div class="smartPrice"><span class="prcFirst">24</span><span class="prcLast">,95</span></div>
+<a href="javascript:void(0);" class="icon basketTotal"><i class="icon">3</i></a>
+</div>
+<div class="smartBranch"><a href="javascript:void(0)"><i class="icon">&nbsp;</i></a></div>
+<div class="resLogo"><a href="javascript:void(0);"><img src="images/logo_res.png" border="0"></a></div>
 <div class="mobiMenu vail"></div>
 </div>
+
+
+<!-- Filtre -->
+
+<div class="filterWrapper">
+
+	<div class="filterMenu">
+
+		<div class="filterBtn"><a href="javascript:void(0)" class="filterIcon"><i class="icon"></i><h4>SONUÇLARI DARALT</h4></a><a href="javascript:void(0);" class="filterClose"><i class="icon"></i> </a></div>
+		<div class="filterList"><a href="javascript:void(0)"><i class="icon"></i><h4>PİZZALAR</h4></a></div>
+
+	</div>
+	
+	
+	<!--  List Dropdown Menu -->
+	
+	<div class="listDropdown">
+
+		<ul>
+
+			<li><a href="javascript:void(0);"><h4>KAMPANYALAR</h4></a></li>
+			<li><a href="javascript:void(0);"><h4>PİZZALAR</h4></a></li>
+			<li><a href="javascript:void(0);"><h4>SALATALAR</h4></a></li>
+			<li><a href="javascript:void(0);"><h4>BAŞLANGIÇLAR</h4></a></li>
+			<li><a href="javascript:void(0);"><h4>TATLILAR</h4></a></li>
+			<li><a href="javascript:void(0);"><h4>İÇECEKLER</h4></a></li>
+
+		</ul>
+
+	</div>
+
+	<!--  Filtre Dropdown Menu -->
+	
+	<div class="filterDropdown">
+
+		<ul class="lvl1">
+
+			<li><a href="javascript:void(0);"><h4>PİZZA TÜRÜNE GÖRE</h4></a>
+			
+				<ul class="lvl2">
+				
+					<li><a href="javascript:void(0);"><h4>SEBZE KEYFİ</h4></a></li>
+					<li><a href="javascript:void(0);"><h4>SUCUK KEYFİ</h4></a></li>
+					<li><a href="javascript:void(0);"><h4>ET KEYFİ</h4></a></li>
+					<li><a href="javascript:void(0);"><h4>DÜNYA KEYFİ</h4></a></li>
+
+				</ul>
+			
+			</li>
+				
+				<!-- ### -->
+				
+			<li><a href="javascript:void(0);"><h4>KİŞİ SAYISINA GÖRE</h4></a>
+			
+				<ul class="lvl2">
+				
+					<li><a href="javascript:void(0);"><h4>1 KİŞİLİK</h4></a></li>
+					<li><a href="javascript:void(0);"><h4>2-3 KİŞİLİK</h4></a></li>
+					<li><a href="javascript:void(0);"><h4>4-5 KİŞİLİK</h4></a></li>
+					<li><a href="javascript:void(0);"><h4>5+ KİŞİLİK</h4></a></li>
+
+				</ul>
+			
+			</li>
+
+		</ul>
+
+	</div>
+
+</div>
+
+
 
 
 <!-- Home Page Slider -->
@@ -364,6 +440,25 @@ var fixedNav = {
 };
 
 fixedNav.init();
+
+/* LINK ACTIVE */
+
+$('.filterList a').toggle(
+  function() {
+    $( '.filterWrapper' ).addClass( "list" );
+  }, function() {
+    $( '.filterWrapper' ).removeClass( "list" );
+  }
+);
+
+$('.filterBtn a').toggle(
+  function() {
+    $( '.filterWrapper' ).addClass( "filter" );
+  }, function() {
+    $( '.filterWrapper' ).removeClass( "filter" );
+  }
+);
+
 
 /////////////////////////////////////////////////////////
 

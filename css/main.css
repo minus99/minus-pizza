@@ -103,6 +103,10 @@
 	list-style:none
 }
 
+a:hover, a:hover span {-webkit-transition: color .25s ease-out; -moz-transition: color .25s ease-out; -o-transition: color .25s ease-out; transition: color .25s ease-out;}
+:focus {outline: 0;}
+
+
 
 /*/////////////////////////////////////////      GENERAL      /////////////////////////////////////////*/
 
@@ -172,6 +176,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .miniBasketLeft .orderPrice span.prcFirst {font-size:30px;}
 .miniBasketLeft .orderPrice span.prcLast {font-size: 18px; vertical-align: top;}
 .miniBasketLeft .orderPrice span.currency {display:none;}
+.smartHeader, .filterWrapper  {display:none;}
 
 
 /*/////////////////////////////////////////      PRODUCT LIST      /////////////////////////////////////////*/
@@ -187,8 +192,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .productList .main .species h3 {color:#fff; font-size:20px; display:inline-block;}
 .productList .main .species  i {float:right; width:18px; height:18px; background-position:0px -143px; display:inline-block;}
 
-.productList .main > ul li .prdImage {float:left; padding-right:30px; max-width: 220px; width: 50%;}
-.productList .main > ul li .contents {max-width:300px; padding: 20px 20px 0 0; float: left; width: 50%;}
+.productList .main > ul li .prdImage {float:left; text-align:center; width: 30%;}
+.productList .main > ul li .prdImage img {width:100%; min-width:130px; max-width:190px;}
+.productList .main > ul li .listInner {float: left; width: 70%;}
+.productList .main > ul li .contents {padding: 20px 20px 0 0; }
 .productList .main > ul li .contents h4 {color:#FFF; font-size:26px; letter-spacing:1px;}
 .productList .main > ul li .contents span{color: #999; font-size: 14px; font-family: 'helvetica-light'; line-height: 24px; margin-right: 3px; position:relative; display: inline-block;}
 .productList .main > ul li .contents span:after {content: ',';}
@@ -196,14 +203,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .productList .main > ul li .contents i.double {width:21px; height:17px; background-position:-190px 0px; position:relative; bottom:-2px; margin-right:10px; display:inline-block;}
 .productList .main > ul li .contents i.threesome {width:21px; height:17px; background-position:-159px 0px; position:relative; bottom:-2px; margin-right:10px; display:inline-block;}
 .productList .main > ul li .addLink {float:left; margin-top:35px;}
-.productList .main > ul li .addBtn {border:2px solid #ee3a43; float:left; padding:8px 10px 4px 10px; margin-right:4px;} 
+.productList .main > ul li .addBtn {border:2px solid #ee3a43; float:left; padding:8px 10px 4px 10px; margin:0 4px 4px 0;} 
 .productList .main > ul li .addBtn:hover {background:#ee3a43;}
 .productList .main > ul li .addBtn span.prcFirst:before {content: "t"; font-family: "tl"; font-size: 18px; font-weight: normal; color: #fff; margin-right: 3px;}
 .productList .main > ul li .addBtn span.prcFirst {font-size: 28px;}
 .productList .main > ul li .addBtn span.prcLast {font-size: 16px; vertical-align: top;}
 .productList .main > ul li .addBtn span.addText {font-size: 19px; padding-right:5px; position:relative; top:-2px; display:inline-block;}
-.productList .main > ul li .addBtn:hover i.addIcon {width:8px; height:14px; background:url(../images/sprite.png) -46px -98px no-repeat; margin-left: 20px; display:inline-block;}  
-.productList .main > ul li .addBtn i.addIcon {width:8px; height:14px; background:url(../images/sprite.png) -86px -98px no-repeat; margin-left: 20px; position:relative; top:-1px; display:inline-block;} 
+.productList .main > ul li .addBtn:hover i.addIcon {background:url(../images/sprite.png) -46px -98px no-repeat; }  
+.productList .main > ul li .addBtn i.addIcon {width:8px; height:14px; background:url(../images/sprite.png) -86px -98px no-repeat; margin-left: 15px; position:relative; top:-1px; display:inline-block;} 
  
 .fixedPanel{position:fixed; top:100px; z-index:3; min-width:230px; top:190px;}
 .fixedPanel ul.lvl1{position:relative}
@@ -232,6 +239,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .footerWrapper .footerMenu .footerList h4 {font-size: 20px; margin-bottom:35px;}
 .footerWrapper .footerMenu .footerList ul li {margin-bottom:7px;}
 .footerWrapper .footerMenu .footerList ul li a {font-size:14px; font-family: 'helvetica-light'; color:#999;}
+.footerWrapper .footerMenu .footerList ul li a:hover { color:#fff;}
 
 
 /**/
@@ -311,9 +319,92 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 
 /*/////////////////////////////////////////      MOBILE      /////////////////////////////////////////*/
 
+
+@media only screen and (max-width:1100px) {
+
+
+/*/////////////////////////////////////////      LIST      /////////////////////////////////////////*/
+
+.fixedPanel, .pageMore {display:none;}
+.productList {padding:0;}
+.productList .main {max-width:none;}
+.productList .main > ul li .prdImage {float:left; text-align:center; padding-right:30px; width: 30%; max-width: 220px;}
+.productList .main > ul li .listInner {float: left; width: 70%;}
+
+}
+
+
 @media only screen and (max-width:780px) {
 
-.smartHeader {width:100%; height:70px; background:url(../images/pageRed.jpg) center top no-repeat;}
-.smartHeader > i.mmenu {width:35px; height:23px; background-position:0 -195px; display:inline-block; float:left;}
+.headerWrapper {display:none;}
+
+/*/////////////////////////////////////////      MOBILE MENU      /////////////////////////////////////////*/
+
+.smartHeader {width:100%; height:70px; border-bottom:2px solid #b90009; background:url(../images/pageRed.jpg) center top no-repeat; display:inline-block;}
+.smartHeader a.mmenu {height:70px; padding: 23px 19px; float: left; border-right:1px solid #f66a70;}
+.smartHeader a.mmenu i {width:35px; height:23px; background-position:0 -195px; display:inline-block; float:left;}
+.smartHeader .smartBasket {height:70px; float:right; border-left: 1px solid #b90009;}
+.smartHeader .smartBasket > a.basketTotal {width:40px; height:40px; margin-right: 25px; position:relative; top:13px; background-position:-56px -174px; display:inline-block;}
+.smartHeader .smartBasket > a.basketTotal i  {width: 26px; height: 26px; font-size: 18px; text-align: center; color:#000; background: #fed516; border-radius: 20px; border:3px solid #ce3239; position: relative; top: 14px; left: 25px; padding: 2px 0 3px 0; display: block;}
+.smartHeader .smartBasket .smartPrice {float:left; margin:0 8px 0 7px; position:relative; top:22px;}
+.smartHeader .smartBasket .smartPrice:before {content: "t"; font-family: "tl"; font-size: 18px; font-weight: normal; color:#fff; margin-right:3px;}
+.smartHeader .smartBasket .smartPrice span {color:#fff;}
+.smartHeader .smartBasket .smartPrice span.prcFirst {font-size:30px;}
+.smartHeader .smartBasket .smartPrice span.prcLast {font-size: 18px; vertical-align: top;}
+.smartHeader .smartBasket .smartPrice span.currency {display:none;}
+.smartHeader .resLogo {width:auto; height: 70px; margin: 0 216px 0 74px; text-align:center; border-left: 1px solid #b90009; border-right: 1px solid #f66a70;}
+.smartHeader .resLogo a {display: inline-block;  margin-top: 20px;}
+.smartHeader .smartBranch a {height:70px; padding: 19px 24px; border-left: 1px solid #b90009; border-right: 1px solid #f66a70; float:right; display:inline-block; }
+.smartHeader .smartBranch i {width:22px; height:32px; background-position:-26px -130px; display:inline-block;}
+
+/*/////////////////////////////////////////      MOBILE FILTER      /////////////////////////////////////////*/
+
+.filterWrapper {display:block;}
+.filterWrapper {width:100%; display:inline-block; position:relative;}
+.filterWrapper.list .listDropdown {display:inline-block;}
+.filterWrapper.list .filterMenu .filterList i {background-position: -71px 0px;}
+
+.filterWrapper.filter .filterDropdown{display:inline-block;}
+.filterWrapper.filter .filterMenu .filterBtn {float:left; width:100%;}
+.filterWrapper.filter .filterMenu .filterBtn a.filterIcon {border:0;}
+.filterWrapper.filter .filterMenu .filterBtn h4 {display:inline-block;}
+.filterWrapper.filter .filterMenu .filterList {display:none;}
+.filterWrapper.filter .filterMenu .filterBtn .filterClose  {display:inline-block;}
+
+/**/
+
+.filterMenu {width:100%; height:60px; display:inline-block; background:#eaeaea; box-shadow: 0px 4px 6px #000;}
+.filterMenu .filterList {width: auto;  margin-right: 70px;}
+.filterMenu .filterList a {width:100%; padding: 20px; display:inline-block;}
+.filterMenu .filterList h4 {font-size:20px; color:#000; letter-spacing:1px; float:left; position:relative; top:3px;}
+.filterMenu .filterList i {width:11px; height:7px; background-position:-71px -23px; position:relative; top:6px; left:5px; margin-right:30px; float:left; display:inline-block;}
+.filterMenu .filterBtn {float:right;}
+.filterMenu .filterBtn a.filterIcon {padding: 21px 25px; border-left:1px solid #ccc; display:inline-block;}
+.filterMenu .filterBtn i {width:18px; height:18px; background-position:-104px -94px; float:left; display:inline-block;}
+.filterMenu .filterBtn h4 {font-size:20px; color:#000; letter-spacing:1px; float:left; position:relative; top:2px;  margin-left: 18px; display:none;}
+.filterMenu .filterBtn a.filterClose {float:right; padding: 23px 25px; display:none;}
+.filterMenu .filterBtn a.filterClose i {width:13px; height:13px; background-position:-14px -28px;}
+.filterDropdown ul.lvl1 > li > a  {background-color:#fff; padding-left: 25px;}
+.filterDropdown ul.lvl2 li > a  h4 {color:#666;}
+.filterDropdown ul.lvl2 {padding:0 20px;}
+
+
+/**/
+
+.filterDropdown {background:#eaeaea; position: absolute; width: 100%; top: 60px; border-top:1px solid #dbdbdb; z-index:2; display:none;}
+.filterDropdown ul li a {width:100%; padding:13px 20px 8px 5px; border-bottom:1px solid #dbdbdb; display:inline-block;}
+.filterDropdown ul li h4 {font-size:18px; color:#000; letter-spacing:1px;}
+
+.listDropdown {background:#eaeaea; position: absolute; width: 100%; padding:0 20px; top: 60px; border-top:1px solid #dbdbdb; z-index:2; display:none;}
+.listDropdown ul li a {width:100%; padding:13px 20px 8px 40px; border-bottom:1px solid #dbdbdb; display:inline-block;}
+.listDropdown ul li h4 {font-size:18px; color:#000; letter-spacing:1px;}
+
+/*/////////////////////////////////////////      LIST      /////////////////////////////////////////*/
+
+.productList .main > ul li .addBtn i.addIcon {display:none !important;}
+.productList .main > ul li .addBtn span.addText {display:block; text-align:center;}
+.productList .main > ul li .contents {padding:20px 0 0 0;}
+.productList .main > ul li .prdImage {float:left; text-align:center; padding-right:30px; width: 35%; max-width: 220px;}
+.productList .main > ul li .listInner {float: left; width: 65%;}
 
 }
