@@ -140,6 +140,7 @@ body {background:#1b1b1a url(../images/pageBg.jpg) repeat-y center top;}
 .pageHeader .login .account a {font-size:14px; color:#888; line-height:17px; font-family: 'usc-medium';}
 .pageHeader .login .account a:hover {color:#fff;}
 
+
 /* Mini Basket */
 
 .pageHeader .miniBasket {width:100%; display:inline-block; float:right;}
@@ -176,7 +177,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .miniBasketLeft .orderPrice span.prcFirst {font-size:30px;}
 .miniBasketLeft .orderPrice span.prcLast {font-size: 18px; vertical-align: top;}
 .miniBasketLeft .orderPrice span.currency {display:none;}
-.smartHeader, .filterWrapper  {display:none;}
+.smartHeader, .filterWrapper , .mobileMenu {display:none;}
 
 
 /*/////////////////////////////////////////      PRODUCT LIST      /////////////////////////////////////////*/
@@ -290,9 +291,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .homePage .homeSlider .sliderNav ul li  a.active i {opacity:1;}
 .homePage .homeSlider .sliderNav ul li span {font-size:14px;}
 .homePage .mainBox {width:100%; text-align:center; background: url(../images/pageGrey.jpg) no-repeat 0 0; background-size:cover;}
-.homePage .mainBox .boxBanner {max-width:1160px; padding:60px 20px 60px 10px; margin:0 auto; position:relative; display:inline-block;}
-.homePage .mainBox .boxBanner ul li {float:left; padding:10px; overflow:hidden;}
-.homePage .mainBox .boxBanner ul li img {}
+.homePage .mainBox .boxBanner {max-width:1160px; width:100%; padding:60px 20px 60px 10px; margin:0 auto; position:relative; display:inline-block;}
+.homePage .mainBox .boxBanner ul li {float:left; padding:10px; overflow:hidden; min-height:340px;}
+.homePage .mainBox .boxBanner ul li img {visibility: hidden;}
 .homePage .mainBox .boxBanner ul li.boxBig {width:50%;}
 .homePage .mainBox .boxBanner ul li.boxNormal {width:25%;}
 
@@ -337,14 +338,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 @media only screen and (max-width:780px) {
 
 .headerWrapper {display:none;}
+.bodyWrapper {-webkit-transition: left 0.3s ease-in; -moz-transition: left 0.3s ease-in; -o-transition: left 0.3s ease-in; transition: left 0.3s ease-in; position:relative; left:0;}
+.menuOpen .bodyWrapper {position:fixed; left:300px !important; -webkit-transition: left 0.3s ease-in; -moz-transition: left 0.3s ease-in; -o-transition: left 0.3s ease-in; transition: left 0.3s ease-in; }
 
 /*/////////////////////////////////////////      MOBILE MENU      /////////////////////////////////////////*/
 
 .smartHeader {width:100%; height:70px; border-bottom:2px solid #b90009; background:url(../images/pageRed.jpg) center top no-repeat; display:inline-block;}
-.smartHeader a.mmenu {height:70px; padding: 23px 19px; float: left; border-right:1px solid #f66a70;}
+.smartHeader a.mmenu {height:70px; padding: 23px 19px; float: left; border-right:1px solid #f66a70; position:relative;}
+.smartHeader a.mmenu:after {content:''; height:70px; width:1px; background-color:#b90009; position: absolute; right: -2px; top: 0; }
 .smartHeader a.mmenu i {width:35px; height:23px; background-position:0 -195px; display:inline-block; float:left;}
-.smartHeader .smartBasket {height:70px; float:right; border-left: 1px solid #b90009;}
-.smartHeader .smartBasket > a.basketTotal {width:40px; height:40px; margin-right: 25px; position:relative; top:13px; background-position:-56px -174px; display:inline-block;}
+.menuOpen .smartHeader a.mmenu i {background-position:-36px -195px;}
+.smartHeader .smartBasket {height:70px; float:right; border-left: 1px solid #b90009; position:relative;}
+.smartHeader .smartBasket:before {content:''; height:70px; width:1px; background-color:#f66a70; position: absolute; left: -2px; top: 0;}
+.smartHeader .smartBasket > a.basketTotal {width:40px; height:40px; margin-right: 25px; position:relative; top:13px; background-position:-107px -117px; display:inline-block;}
 .smartHeader .smartBasket > a.basketTotal i  {width: 26px; height: 26px; font-size: 18px; text-align: center; color:#000; background: #fed516; border-radius: 20px; border:3px solid #ce3239; position: relative; top: 14px; left: 25px; padding: 2px 0 3px 0; display: block;}
 .smartHeader .smartBasket .smartPrice {float:left; margin:0 8px 0 7px; position:relative; top:22px;}
 .smartHeader .smartBasket .smartPrice:before {content: "t"; font-family: "tl"; font-size: 18px; font-weight: normal; color:#fff; margin-right:3px;}
@@ -352,10 +358,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .smartHeader .smartBasket .smartPrice span.prcFirst {font-size:30px;}
 .smartHeader .smartBasket .smartPrice span.prcLast {font-size: 18px; vertical-align: top;}
 .smartHeader .smartBasket .smartPrice span.currency {display:none;}
-.smartHeader .resLogo {width:auto; height: 70px; margin: 0 216px 0 74px; text-align:center; border-left: 1px solid #b90009; border-right: 1px solid #f66a70;}
+.smartHeader .resLogo {width:auto; height: 70px; margin: 0 216px 0 74px; text-align:center;}
 .smartHeader .resLogo a {display: inline-block;  margin-top: 20px;}
-.smartHeader .smartBranch a {height:70px; padding: 19px 24px; border-left: 1px solid #b90009; border-right: 1px solid #f66a70; float:right; display:inline-block; }
+.smartHeader .smartBranch a {height:70px; padding: 19px 24px; border-left: 1px solid #b90009; border-right: 1px solid #f66a70; position:relative; float:right; display:inline-block; }
+.smartHeader .smartBranch a:before {content:''; height:70px; width:1px; background-color:#f66a70; position: absolute; left: -2px; top: 0;}
 .smartHeader .smartBranch i {width:22px; height:32px; background-position:-26px -130px; display:inline-block;}
+
+/* Basket Empty */
+
+.basketEmpty .smartHeader .smartBasket > a.basketTotal {background-position:-107px -159px; margin:0 14px;}
+.basketEmpty .smartPrice, .basketEmpty .smartHeader a.basketTotal i, .basketEmpty .smartBranch {display:none;}
+.basketEmpty .smartHeader .resLogo {margin:0 70px 0 74px;}
+
+/* Mobile Bottom Menu */
+
+.mobileMenu {width:100%; height:70px; background: url(../images/pageGrey.jpg) no-repeat 0 0; position:fixed; bottom:0; box-shadow: 0px -3px 26px #000; -webkit-transition: bottom 0.3s ease-in; -moz-transition: bottom 0.3s ease-in; -o-transition: bottom 0.3s ease-in; transition: bottom 0.3s ease-in; z-index:2; display:inline-block;}
+.menuOpen .mobileMenu {bottom:-70px;}
+.mobileMenu ul li {float:left; width:25%;}
+.mobileMenu ul li a {width:100%; height:70px; text-align:center; border-right: 1px solid #bebebe; display:inline-block; }
+.mobileMenu ul li:last-child a {border:0;}
+.mobileMenu ul li a.lnkMenu i {width:22px; height:22px; background-position:0px -232px; display:inline-block;}
+.mobileMenu ul li a.lnkOrder i {width:22px; height:22px; background-position:-24px -232px; display:inline-block;}
+.mobileMenu ul li a.lnkFav i {width:22px; height:22px; background-position:-48px -232px; display:inline-block;}
+.mobileMenu ul li a.lnkAccount i {width:22px; height:22px; background-position:-70px -232px; display:inline-block;}
+.mobileMenu ul li a i {margin:10px 0 12px 0;}
+.mobileMenu ul li a span {font-size:14px; text-align:center; color:#787878; display:block;}
+.mobileMenu ul li a.active {background:rgba(0,0,0,0.8); border-top:4px solid #bc353c; position: relative; top: -4px; height: 74px;}
+.mobileMenu ul li a.active i {background-position-y:-255px;}
+.mobileMenu ul li a.active span {color:#fff;}
+
 
 /*/////////////////////////////////////////      MOBILE FILTER      /////////////////////////////////////////*/
 
@@ -406,5 +437,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .productList .main > ul li .contents {padding:20px 0 0 0;}
 .productList .main > ul li .prdImage {float:left; text-align:center; padding-right:30px; width: 35%; max-width: 220px;}
 .productList .main > ul li .listInner {float: left; width: 65%;}
+
+/*/////////////////////////////////////////      MOBILE FOOTER MENU      /////////////////////////////////////////*/
+
+.footerWrapper {width:300px; position:absolute; left:-300px; top:0; background:#202020; padding:35px 20px; box-shadow: -15px 0 8px -10px rgba(0,0,0,0.6) inset; -webkit-transition: left 0.3s ease-in; -moz-transition: left 0.3s ease-in;	-o-transition: left 0.3s ease-in; transition: left 0.3s ease-in;}
+.menuOpen .footerWrapper {left:0px;}
+.footerWrapper .footerMenu {width:100%;}
+.footerWrapper .footerMenu .footerList {width:100%; max-width:none;}
+.footerWrapper .footerMenu .footerList ul li {margin-bottom:16px;}
+.footerWrapper .footerMenu .footerList h4 {padding-bottom:15px; margin-bottom:15px; border-bottom:1px solid #373737;}
+.footerMenu .footerList, .footerWrapper .footerInfo .footerSocial h4 {display:none;}
+.footerMenu .footerList:first-child {display:block;}
+.footerWrapper .footerInfo {width:100%; margin-top:55px;}
+.footerWrapper .footerInfo .footerSocial ul li {margin-right:15px;}
+.footerWrapper .footerIcon .footerProduct {width:100%;}
+.footerWrapper .footerIcon .footerProduct ul li {width:100%; padding:14px 0; border:0; border-top:1px solid #373737;}
+.footerWrapper .footerIcon .footerProduct ul li img {max-width:54px; margin:0 17px 0 0; float:left; display:inline-block;}
+.footerWrapper .footerIcon .footerTel {width:300px; background:#111; text-align:center; padding:20px 0; position:relative; left:-20px;}
 
 }
