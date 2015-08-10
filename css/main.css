@@ -292,8 +292,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .homePage .homeSlider .sliderNav ul li span {font-size:14px;}
 .homePage .mainBox {width:100%; text-align:center; background: url(../images/pageGrey.jpg) no-repeat 0 0; background-size:cover;}
 .homePage .mainBox .boxBanner {max-width:1160px; width:100%; padding:60px 20px 60px 10px; margin:0 auto; position:relative; display:inline-block;}
-.homePage .mainBox .boxBanner ul li {float:left; padding:10px; overflow:hidden; min-height:340px;}
-.homePage .mainBox .boxBanner ul li img {visibility: hidden;}
+.homePage .mainBox .boxBanner ul li {float:left; padding:10px; overflow:hidden;}
+.homePage .mainBox .boxBanner ul li img {visibility: hidden; width:100%;}
+.homePage .mainBox .boxBanner ul li i  {display:inline-block; background-size:cover; width:100%; overflow:hidden;}
 .homePage .mainBox .boxBanner ul li.boxBig {width:50%;}
 .homePage .mainBox .boxBanner ul li.boxNormal {width:25%;}
 
