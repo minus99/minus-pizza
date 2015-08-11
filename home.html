@@ -11,6 +11,38 @@
 
 <body class="homePage basketEmpty">
 
+<!-- POPUP -->
+
+<div class="popupOuter">
+
+	<div class="popupInner">
+
+		<div class="popupWrapper">
+		
+			<div class="popupIcon"><span>GÜNÜN FIRSATI</span><img src="images/popupLabel.png" bordeR="0" /></div>
+			<div class="popupClose"><a href="javascript:void(0)"><i class="icon"></i></a></div>
+			
+			<div class="popupContent">
+				<h4>MENÜ'YÜ TAMAMLAYIN</h4>
+				<img src="images/cokomania.png" border="0" />
+				<span>ÇOKOMANİA</span>
+				<p>2 kat bitter çikolata ve 2 kat beyaz çikolatanın Pizza Hut'ın efsane pan hamuru ile birleşimi</p>
+				<div class="popupPrice"><span class="prcFirst">24</span><span class="prcLast">,95</span></div>
+			</div>
+			<div class="popupLink">
+				
+					<a href="javascript:void(0);" class="linkReject"><p>İSTEMİYORUM</p></a>
+					<a href="javascript:void(0);" class="linkConfirm"><p>SEPETE EKLE</p></a>
+				
+				</div>
+			
+			
+		</div>
+	
+	</div>
+
+</div>
+
 <div class="bodyWrapper">
 
 <!-- Page Header -->
@@ -32,7 +64,7 @@
 	
 	<div class="miniBasket">
 	
-		<div class="basketAdd"><a href="basketBtn"><span>SİPARİŞ VER</span><i class="icon"></i><img src="images/sepetIcon.png" border="0" /></a></div>
+		<div class="basketAdd"><a href="javascript:void(0);" class="basketBtn"><span>SİPARİŞ VER</span><i class="icon"></i><img src="images/sepetIcon.png" border="0" /></a></div>
 		<div class="miniBasketLeft">
 			<div class="wrapper">
 				<div class="basketAdress"><a href="javascript:void(0);"><h3 class="locationName">EVIM</h3><h4 class="countyName">(ATASEHİR)</h4><i class="icon"></i></a></div>
@@ -134,7 +166,61 @@
 
 </div>
 
+<!-- LOGIN -->
 
+<div class="smallLoginHolder hidden">
+	<div class="smallLogin">
+
+		<div class="loginHeader">
+			<h4>GİRİŞ YAP</h4>
+			<span>Kayıtlı adreslerinize hızlıca ulaşmak için giriş yapın</span>
+		</div>
+		
+		<div class="socialLogin">
+		
+			<a href="javascript:void(0);" class="loginFacebook"><i class="icon"></i><span>BAĞLAN</span></a>
+			<a href="javascript:void(0);" class="loginGplus"><i class="icon"></i><span>BAĞLAN</span></a>
+		
+		</div>
+		
+		<div class="loginForm">
+		
+				<input name="email" type="text" class="txt" placeholder="Email">
+				<input name="password" type="text" class="txt" placeholder="Şifre">
+			
+			<div class="remember">
+			
+				<input type="checkbox" name="remember" class="sCheckbox"><span>Beni hatırla</span>
+			
+			</div>
+			
+			<div class="forgotPass">
+			
+				<a href="javascript:void(0);"><span>Şifremi unuttum</span></a>
+			
+			</div>
+		
+		</div>
+		
+		<div class="loginLink">
+			<a href="javascript:void(0);" class="loginBtn"><h4>GİRİŞ YAP</h4></a>
+			<a href="javascript:void(0);" class="newLoginBtn"><h4>YENİ ÜYELİK</h4><i class="icon"></i></a>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- LOGOUT -->
+
+<div class="smallAccountHolder">
+	<div class="smallAccount">
+
+		<div class="accountImage"><img src="images/loginFoto.png" border="0" /></div>
+		<div class="accountText"><span>Mert Akbulut, Hoşgeldiniz.</span></div>
+
+	</div>
+</div>
 
 
 <!-- Home Page Slider -->
@@ -477,6 +563,13 @@ $('.mobileMenu .lnkMenu, .smartHeader a.mmenu').toggle(function () {
   }, function() {
     $( 'body' ).removeClass( "menuOpen" );
 	
+
+});
+
+$('.popupClose a, .popupLink a').click(function () {
+
+	$( '.popupOuter' ).css( 'display', 'none' );
+  
 
 });
 

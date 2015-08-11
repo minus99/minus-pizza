@@ -88,7 +88,7 @@
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 	font-family:'usc-bold';
-	font-size:13px;
+	font-size:14px;
 	color:#FFF;
 	font-weight:400;
 	font-style:normal;
@@ -123,6 +123,7 @@ body {background:#1b1b1a url(../images/pageBg.jpg) repeat-y center top;}
 /*/////////////////////////////////////////      PIZZAHUT CSS      /////////////////////////////////////////*/
 
 .containWrapper {max-width:1140px; padding:0 20px; margin:0 auto; position:relative;}
+.bodyWrapper {text-align:center;}
 
 
 /*/////////////////////////////////////////      HEADER      /////////////////////////////////////////*/
@@ -178,6 +179,50 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .miniBasketLeft .orderPrice span.prcLast {font-size: 18px; vertical-align: top;}
 .miniBasketLeft .orderPrice span.currency {display:none;}
 .smartHeader, .filterWrapper , .mobileMenu {display:none;}
+
+
+/*/////////////////////////////////////////      LOGIN      /////////////////////////////////////////*/
+
+.smallLoginHolder {max-width:1140px; width:100%; padding:10px 20px; margin:0 auto; position:relative; top:-137px; z-index: 2; display:inline-block;}
+.smallLogin {background: url(../images/pageGrey.jpg) no-repeat 0 0;  position: absolute; top:0; right:0; width: 100%; padding:40px; max-width: 370px; display: inline-block;}
+.smallLogin .loginHeader h4 {font-size:20px; color:#202020; margin-bottom:15px;}
+.smallLogin .loginHeader span {width:100%; font-size:14px; color:#202020; margin-bottom:25px; font-family:'helvetica-light'; display:inline-block;}
+
+.smallLogin .socialLogin {width:100%; border-bottom:1px solid #bababa; padding-bottom:34px; margin-bottom:25px; position:relative; display:inline-block;}
+.smallLogin .socialLogin  a {width:47%; text-align:center; padding: 13px 0; border-radius:5px; float:left;}
+.smallLogin .socialLogin  a.loginFacebook {background:#3c589f; float:left;}
+.smallLogin .socialLogin a.loginGplus {background:#da4835; float:right;}
+.smallLogin .socialLogin  a span {font-size:20px; color:#fff; position: relative; top: -3px;}
+.smallLogin .socialLogin:after {content:''; height:1px; background-color:#fff; position: absolute; bottom: -2px; width: 100%; display: block; }
+.smallLogin .socialLogin a i {position: relative; top: 2px; left:-10px;}
+.smallLogin .socialLogin a.loginFacebook i {width:24px; height:24px; background-position:-154px -33px; display:inline-block;}
+.smallLogin .socialLogin a.loginGplus i {width:24px; height:24px; background-position:-184px -33px; display:inline-block;}
+
+.smallLogin .loginForm {width:100%; margin-bottom:15px; display:inline-block;}
+.smallLogin .loginForm  input.txt {width:100%; color:#969696; padding:12px; border:1px solid #fff; border-left-color:#c0c0c0;  border-top-color:#c0c0c0; margin-bottom:10px; font-size:16px; font-family:'helvetica-light'; display:inline-block;}
+.smallLogin .loginForm .remember {float:left;}
+.smallLogin .loginForm .remember span {color:#202020; font-size:15px; font-family:'helvetica-light'; display:inline-block;}
+.smallLogin .loginForm .remember  input.sCheckbox {margin-right: 10px; float: left;}
+.smallLogin .loginForm .forgotPass {float:right; display:inline-block;}
+.smallLogin .loginForm .forgotPass a span {float:right; color:#202020; font-size:15px; font-family:'helvetica-light'; }
+
+.smallLogin  .loginLink {width:100%; display:inline-block;}
+.smallLogin  .loginLink a {width:100%; display:inline-block; text-align:center;}
+.smallLogin  .loginLink .loginBtn {background:#202020; text-align:center; border-radius:5px; padding:12px;}
+.smallLogin  .loginLink .loginBtn h4 {color:#fff; font-size:20px; text-align:center; position: relative; top: 2px; display: block;}
+.smallLogin  .loginLink .newLoginBtn {margin-top:36px;}
+.smallLogin  .loginLink .newLoginBtn h4 {color:#202020; font-size:16px; display:inline-block;}
+.smallLogin  .loginLink .newLoginBtn i {width:18px; height:11px; background-position:-132px -97px; margin-left: 10px; display:inline-block;}
+
+
+/*/////////////////////////////////////////      ACCOUNT      /////////////////////////////////////////*/
+
+.smallLoginHolder {max-width:1140px; width:100%; padding:10px 20px; margin:0 auto; position:absolute; top:0px; left:0; right:0; z-index: 2; display:inline-block;}
+
+.smallAccountHolder {max-width:1140px; width:100%; padding:10px 20px; margin:0 auto; position:absolute; top:0px; left:0; right:0; z-index: 2; display:inline-block;}
+.smallAccount {background: url(../images/pageGrey.jpg) no-repeat 0 0;  position: absolute; top:0; right:0; width: 100%; padding:40px; max-width: 370px; display: inline-block;}
+.smallAccount .accountImage {width:46px; height:46px; border-radius:30px; overflow:hidden; border:2px solid #fff; float:left;}
+.smallAccount .accountText span {font-size:14px; color:#202020; margin-left:20px;}
 
 
 /*/////////////////////////////////////////      PRODUCT LIST      /////////////////////////////////////////*/
@@ -318,6 +363,52 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .tabSlider .populerSlider .navBtn a.prevBtn {float:left; margin-left:20px;}
 .tabSlider .populerSlider .navBtn a.nextBtn i {background-position: -78px -127px;}
 .tabSlider .populerSlider .navBtn a.prevBtn i {background-position: -55px -127px;}
+
+/*/////////////////////////////////////////      POPUP      /////////////////////////////////////////*/
+
+
+.popupOuter {display: block;  background: rgba(0, 0, 0, .4);  position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 1;}
+.popupInner { position: relative; padding:0 20px; top: 50%;  -webkit-transform: translateY(-50%);  -moz-transform: translateY(-50%);  -o-transform: translateY(-50%);  -ms-transform: translateY(-50%); transform: translateY(-50%); margin: auto; text-align: center;}
+
+/**/
+
+.popupWrapper {background: url(../images/pageGrey.jpg) no-repeat 0 0; position:relative; width:100%; max-width:540px; display:inline-block;}
+
+/**/
+
+.popupContent  {text-align:center; padding:20px;}
+.popupContent > h4 {width:100%; font-size:20px; color:#202020; letter-spacing: 0.3px; padding:5px 0 20px 0; border-bottom:1px solid #bbb; display:inline-block;}
+.popupContent > span {font-size:18px; color:#202020; text-align:center; margin-bottom:12px; display:block;}
+.popupContent > p {font-size:14px; color:#888; font-family:'helvetica-light'; text-align:center; margin-bottom:25px; width: 100%; max-width: 300px; display:inline-block; }
+.popupContent > img {margin:70px auto 35px auto; display:block;}
+
+/* Popup Price */
+
+.popupPrice {display:block; text-align:center;}
+.popupPrice:before {content: "t"; font-family: "tl"; font-size: 18px; font-weight: normal; color:#000; margin-right:3px;}
+.popupPrice span {color:#000;}
+.popupPrice span.prcFirst {font-size:30px;}
+.popupPrice span.prcLast {font-size: 18px; vertical-align: top;}
+
+/* Popup Close*/
+
+.popupClose {position:absolute; right: -15px; top: -15px; z-index:2;}
+.popupClose a {padding:10px; border-radius:100%; background:#ffbf00; display:block;}
+.popupClose i {background-position: 0px -28px; width: 13px;  height: 13px; display:block;}
+
+
+/* Popup Icon*/
+
+.popupIcon {position:absolute; right:-9px; top:100px;}
+.popupIcon span {font-size:20px; padding:3px 10px 3px 20px; background: -webkit-linear-gradient(#000, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: absolute; top: 43%; -webkit-transform: translateY(-43%); -moz-transform: translateY(-43%); -o-transform: translateY(-43%); -ms-transform: translateY(-43%); transform: translateY(-43%);}
+
+/* Popup Link */
+
+.popupLink {display: block; width: 100%; margin: 0; padding: 0;}
+.popupLink a {width:50%; float:left; height:70px; display:table;}
+.popupLink a p {display:table-cell; vertical-align:middle; text-align:center; letter-spacing:0.3px;}
+.popupLink a.linkReject p {font-size:18px; color:#525252; background:rgba(0,0,0,0.3);}
+.popupLink a.linkConfirm p {font-size:26px; color:#fff; background:rgba(255,191,0,0.9);}
 
 /*/////////////////////////////////////////      MOBILE      /////////////////////////////////////////*/
 
