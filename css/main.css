@@ -113,6 +113,7 @@ a:hover, a:hover span {-webkit-transition: color .25s ease-out; -moz-transition:
 body {background:#1b1b1a url(../images/pageBg.jpg) repeat-y center top;}
 .right {float:right;}
 .left {float:left;}
+.hide, .hidden {display:none !important;}
 
 
 /*/////////////////////////////////////////      ICON      /////////////////////////////////////////*/
@@ -133,6 +134,7 @@ body {background:#1b1b1a url(../images/pageBg.jpg) repeat-y center top;}
 .pageHeader .logo {float:left;}
 .pageHeader .mobileCol {float:left; margin-left:65px;}
 .pageHeader .mobileCol a {font-size:20px; color:#888; letter-spacing: 0.2px; padding:24px 25px 22px 0; float:left; position:relative;}
+.pageHeader .mobileCol a:hover {color:#fff;}
 .pageHeader .mobileCol a.menuLink:after {content:''; width:11px; height:7px; background:url(../images/sprite.png) -71px -68px no-repeat; margin-left: 10px; position:relative; top:-2px; display:inline-block;}
 .pageHeader .login {float:right; padding: 24px 20px;}
 .pageHeader .login .memberInfo {font-size:14px; font-family: 'helvetica-light'; color:#888; float: left; padding-right:10px;}
@@ -183,8 +185,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 
 /*/////////////////////////////////////////      LOGIN      /////////////////////////////////////////*/
 
-.smallLoginHolder {max-width:1140px; width:100%; padding:10px 20px; margin:0 auto; position:relative; top:-137px; z-index: 2; display:inline-block;}
-.smallLogin {background: url(../images/pageGrey.jpg) no-repeat 0 0;  position: absolute; top:0; right:0; width: 100%; padding:40px; max-width: 370px; display: inline-block;}
+.smallLoginHolder {max-width:1140px; width:100%; padding:10px 20px; margin:0 auto; position:fixed; top:0px; left:0; right:0; z-index: 2; display:inline-block;}
+.smallLoginHolder:after {content: "";  display: block; background: rgba(0, 0, 0, .4); position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 1;}
+
+.smallLogin {background: url(../images/pageGrey.jpg) no-repeat 0 0;  position: absolute; top:0; right:0; width: 100%; padding:40px; max-width: 370px; z-index: 2; display: inline-block;}
 .smallLogin .loginHeader h4 {font-size:20px; color:#202020; margin-bottom:15px;}
 .smallLogin .loginHeader span {width:100%; font-size:14px; color:#202020; margin-bottom:25px; font-family:'helvetica-light'; display:inline-block;}
 
@@ -212,17 +216,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .smallLogin  .loginLink .loginBtn h4 {color:#fff; font-size:20px; text-align:center; position: relative; top: 2px; display: block;}
 .smallLogin  .loginLink .newLoginBtn {margin-top:36px;}
 .smallLogin  .loginLink .newLoginBtn h4 {color:#202020; font-size:16px; display:inline-block;}
-.smallLogin  .loginLink .newLoginBtn i {width:18px; height:11px; background-position:-132px -97px; margin-left: 10px; display:inline-block;}
+.smallLogin  .loginLink .newLoginBtn i {width:18px; height:11px; background-position:-132px -97px; margin-left: 10px;  display:inline-block;}
 
 
 /*/////////////////////////////////////////      ACCOUNT      /////////////////////////////////////////*/
 
-.smallLoginHolder {max-width:1140px; width:100%; padding:10px 20px; margin:0 auto; position:absolute; top:0px; left:0; right:0; z-index: 2; display:inline-block;}
-
-.smallAccountHolder {max-width:1140px; width:100%; padding:10px 20px; margin:0 auto; position:absolute; top:0px; left:0; right:0; z-index: 2; display:inline-block;}
-.smallAccount {background: url(../images/pageGrey.jpg) no-repeat 0 0;  position: absolute; top:0; right:0; width: 100%; padding:40px; max-width: 370px; display: inline-block;}
+.smallAccount {background: url(../images/pageGrey.jpg) no-repeat 0 0; min-height:490px;  position: absolute; top:0; right:0; width: 100%; padding: 40px 40px 80px 40px; max-width: 370px; z-index: 2; display: inline-block;}
 .smallAccount .accountImage {width:46px; height:46px; border-radius:30px; overflow:hidden; border:2px solid #fff; float:left;}
-.smallAccount .accountText span {font-size:14px; color:#202020; margin-left:20px;}
+.smallAccount .accountText {width:auto;  margin-left: 70px; padding-top: 15px;}
+.smallAccount .accountText span {font-size:14px; font-family:'helvetica-light'; color:#202020; line-height: 20px;}
+.smallAccount .accountHeader {width:100%; border-bottom:1px solid #bababa; padding-bottom:15px; position:relative; display:inline-block;}
+.smallAccount .accountHeader:after {content:''; height:1px; background-color:#fff; position: absolute; bottom: -2px; width: 100%; display: block; }
+.smallAccount .accountAddress h4 {font-size:20px; color:#202020; border-bottom:1px solid #bababa; padding: 30px 0 15px 0; width: 100%; display: inline-block;}
+.smallAccount .accountAddress ul li a { width: 100%; font-size:14px; font-family:'helvetica-light'; color:#202020; padding: 12px 0 12px 0; border-bottom:1px solid #bababa; display: inline-block;}
+.smallAccount .newAddress {position:absolute; bottom:40px;}
+.smallAccount .newAddress i {font-size:14px; color:#202020; line-height: 10px; margin-right:8px; font-family: 'helvetica-light'; float:left;}
+.smallAccount .newAddress span {font-size:15px; color:#202020;}
+
 
 
 /*/////////////////////////////////////////      PRODUCT LIST      /////////////////////////////////////////*/
@@ -312,10 +322,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 
 /*/////////////////////////////////////////      HOME PAGE      /////////////////////////////////////////*/
 
-.homePage .pageHeader {padding-top:45px;}
-.homePage .pageHeader .miniBasket {width:auto;}
-.homePage .pageHeader .miniBasket .miniBasketLeft {display:none;}
-.homePage .pageHeader .login {display:none;}
+.hideMenu .pageHeader {padding-top:45px;}
+.hideMenu .pageHeader .miniBasket {width:auto;}
+.hideMenu .pageHeader .miniBasket .miniBasketLeft {display:none;}
+.hideMenu .pageHeader .login {display:none;}
 
 /**/
 
@@ -367,7 +377,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 /*/////////////////////////////////////////      POPUP      /////////////////////////////////////////*/
 
 
-.popupOuter {display: block;  background: rgba(0, 0, 0, .4);  position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 1;}
+.popupOuter {display: block;  background: rgba(0, 0, 0, .4);  position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 5;}
 .popupInner { position: relative; padding:0 20px; top: 50%;  -webkit-transform: translateY(-50%);  -moz-transform: translateY(-50%);  -o-transform: translateY(-50%);  -ms-transform: translateY(-50%); transform: translateY(-50%); margin: auto; text-align: center;}
 
 /**/
@@ -409,6 +419,45 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .popupLink a p {display:table-cell; vertical-align:middle; text-align:center; letter-spacing:0.3px;}
 .popupLink a.linkReject p {font-size:18px; color:#525252; background:rgba(0,0,0,0.3);}
 .popupLink a.linkConfirm p {font-size:26px; color:#fff; background:rgba(255,191,0,0.9);}
+
+
+/*/////////////////////////////////////////      CONTENT PAGE      /////////////////////////////////////////*/
+
+.contentWrapper {max-width:1100px; width:100%; padding:40px 20px; margin:10px auto 0 auto; position:relative; border-top:1px solid #666; display:block;}
+.contentWrapper .contentMenu {max-width:210px; width:100%;}
+.contentWrapper .contentMenu ul li a {font-size:18px; color:#878787; border-bottom:1px solid #666; padding:11px 13px; display:block;}
+.contentWrapper .contentMenu ul li a:hover {color:#fff;}
+.contentWrapper .contentMenu ul li a.active {background-color:#dcddd8; color:#000;}
+.contentWrapper .contentPage {width:auto; margin-left:260px;}
+.contentWrapper .contentPage h4 {font-size:56px; font-family: 'usc-medium'; color:#fff; margin-bottom:25px; letter-spacing:0.5px;}
+.contentWrapper .contentPage p {font-size:15px; font-family:'helvetica-light'; line-height:22px; color:#dddddd;  margin-bottom:25px; letter-spacing:0.2px;}
+.contentWrapper .contentPage ul  {margin-bottom:20px;}
+.contentWrapper .contentPage ul li  {font-size:15px; font-family:'helvetica-light'; line-height:25px; color:#dddddd; letter-spacing:0.2px;}
+.contentWrapper .mobilMenuSelect {display:none;}
+
+/*/////////////////////////////////////////      ORDER PAGE      /////////////////////////////////////////*/
+
+.stepOrderWrapper {max-width:1100px; width:100%; padding:40px 20px; margin:10px auto 0 auto; position:relative; border-top:1px solid #666; display:block;}
+.stepOrderWrapper .stepHeader h4 {font-size:56px; font-family: 'usc-medium'; color:#fff; margin-bottom:10px; letter-spacing:0.5px;}
+.stepOrderWrapper .stepHeader p {font-size:15px; font-family:'helvetica-light'; line-height:22px; color:#dddddd;  margin-bottom:25px; letter-spacing:0.2px;}
+.stepOrderWrapper .stepProcess {width:100%; border:1px solid #666666; margin-bottom:70px; display:inline-block;}
+.stepOrderWrapper .stepProcess ul li {width:25%; float:left; text-align:center; border-right:1px solid #666;}
+.stepOrderWrapper .stepProcess ul li:last-child {border:0;}
+.stepOrderWrapper .stepProcess ul li:first-child a.active:before {display:none;}
+.stepOrderWrapper .stepProcess ul li:last-child a.active:after {display:none;}
+.stepOrderWrapper .stepProcess ul li a {width:100%; text-align:center;  padding:10px; opacity:0.3; display:inline-block;}
+.stepOrderWrapper .stepProcess ul li a.active {background-color:#505050; position: relative; top: -10px; padding: 20px; margin-bottom: -20px; opacity:1;}
+.stepOrderWrapper .stepProcess ul li a.active:before {content:''; width:8px; height:100%; background-image:url(../images/stepShadowLeft.png); background-size:cover; position:absolute; top:0; left:-8px; display:block;}
+.stepOrderWrapper .stepProcess ul li a.active:after {content:''; width:8px; height:100%; background-image:url(../images/stepShadowRight.png); background-size:cover; position:absolute; top:0; right:-8px; display:block;}
+.stepOrderWrapper .stepProcess ul li a.approved {opacity:1;}
+.stepOrderWrapper .stepProcess ul li a span {font-size:20px; display:block; text-align:center;}
+.stepOrderWrapper .stepProcess ul li a i {width:80px; height:55px; background:url(../images/stepImage.png) 0 0 no-repeat; margin-bottom:15px; display:inline-block;}
+.stepOrderWrapper .stepProcess ul li .s2 i {background-position:-80px 0;}
+.stepOrderWrapper .stepProcess ul li .s3 i {background-position:-160px 0;}
+.stepOrderWrapper .stepProcess ul li .s4 i {background-position:-240px 0;}
+.stepOrderWrapper  .stepOrderInfo p {color:#656565; font-family:'helvetica-light'; margin-right: 10px; padding-left: 27px; line-height:17px;}
+.stepOrderWrapper  .stepOrderInfo i {width:16px; height:16px; background-position:-130px -38px; float: left; display:inline-block;}
+
 
 /*/////////////////////////////////////////      MOBILE      /////////////////////////////////////////*/
 
@@ -482,30 +531,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 
 /*/////////////////////////////////////////      MOBILE FILTER      /////////////////////////////////////////*/
 
-.filterWrapper {display:block;}
-.filterWrapper {width:100%; display:inline-block; position:relative;}
+.filterWrapper {width:100%; position:relative; z-index:3; display:block;}
 .filterWrapper.list .listDropdown {display:inline-block;}
 .filterWrapper.list .filterMenu .filterList i {background-position: -71px 0px;}
 
 .filterWrapper.filter .filterDropdown{display:inline-block;}
 .filterWrapper.filter .filterMenu .filterBtn {float:left; width:100%;}
-.filterWrapper.filter .filterMenu .filterBtn a.filterIcon {border:0;}
+.filterWrapper.filter .filterMenu .filterBtn a.filterIcon {border:0; float:left;}
 .filterWrapper.filter .filterMenu .filterBtn h4 {display:inline-block;}
 .filterWrapper.filter .filterMenu .filterList {display:none;}
 .filterWrapper.filter .filterMenu .filterBtn .filterClose  {display:inline-block;}
 
 /**/
 
-.filterMenu {width:100%; height:60px; display:inline-block; background:#eaeaea; box-shadow: 0px 4px 6px #000;}
+.filterMenu {width:100%; height:60px; display:block; background:#eaeaea; box-shadow: 0px 4px 6px #000;}
 .filterMenu .filterList {width: auto;  margin-right: 70px;}
 .filterMenu .filterList a {width:100%; padding: 20px; display:inline-block;}
 .filterMenu .filterList h4 {font-size:20px; color:#000; letter-spacing:1px; float:left; position:relative; top:3px;}
 .filterMenu .filterList i {width:11px; height:7px; background-position:-71px -23px; position:relative; top:6px; left:5px; margin-right:30px; float:left; display:inline-block;}
 .filterMenu .filterBtn {float:right;}
-.filterMenu .filterBtn a.filterIcon {padding: 21px 25px; border-left:1px solid #ccc; display:inline-block;}
+.filterMenu .filterBtn a.filterIcon {height: 60px; padding: 23px 25px; border-left:1px solid #ccc; float:right; display:inline-block;}
 .filterMenu .filterBtn i {width:18px; height:18px; background-position:-104px -94px; float:left; display:inline-block;}
 .filterMenu .filterBtn h4 {font-size:20px; color:#000; letter-spacing:1px; float:left; position:relative; top:2px;  margin-left: 18px; display:none;}
-.filterMenu .filterBtn a.filterClose {float:right; padding: 23px 25px; display:none;}
+.filterMenu .filterBtn a.filterClose {height:60px; float:right; padding: 26px 28px; display:none;}
 .filterMenu .filterBtn a.filterClose i {width:13px; height:13px; background-position:-14px -28px;}
 .filterDropdown ul.lvl1 > li > a  {background-color:#fff; padding-left: 25px;}
 .filterDropdown ul.lvl2 li > a  h4 {color:#666;}
@@ -514,13 +562,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 
 /**/
 
-.filterDropdown {background:#eaeaea; position: absolute; width: 100%; top: 60px; border-top:1px solid #dbdbdb; z-index:2; display:none;}
+.filterDropdown {background:#eaeaea; position: absolute; width: 100%; top: 60px; left:0; border-top:1px solid #dbdbdb; z-index:2; display:none;}
 .filterDropdown ul li a {width:100%; padding:13px 20px 8px 5px; border-bottom:1px solid #dbdbdb; display:inline-block;}
 .filterDropdown ul li h4 {font-size:18px; color:#000; letter-spacing:1px;}
 
 .listDropdown {background:#eaeaea; position: absolute; width: 100%; padding:0 20px; top: 60px; border-top:1px solid #dbdbdb; z-index:2; display:none;}
 .listDropdown ul li a {width:100%; padding:13px 20px 8px 40px; border-bottom:1px solid #dbdbdb; display:inline-block;}
 .listDropdown ul li h4 {font-size:18px; color:#000; letter-spacing:1px;}
+
+/*/////////////////////////////////////////      LOGIN      /////////////////////////////////////////*/
+
+.smallLoginHolder, .smallLogin, .smallAccount {position:relative; top:0; left:0; right:0;}
+.smallLoginHolder:after {display:none;}
+.smallLoginHolder {padding:0;}
+.smallAccount, .smallLogin {max-width: none;}
+
 
 /*/////////////////////////////////////////      LIST      /////////////////////////////////////////*/
 
@@ -547,4 +603,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec353e', end
 .footerWrapper .footerIcon .footerProduct ul li img {max-width:54px; margin:0 17px 0 0; float:left; display:inline-block;}
 .footerWrapper .footerIcon .footerTel {width:300px; background:#111; text-align:center; padding:20px 0; position:relative; left:-20px;}
 
+
+/*/////////////////////////////////////////      CONTENT PAGE      /////////////////////////////////////////*/
+
+.contentWrapper {border:0; margin:0 0 100px 0; padding:0px;}
+.contentWrapper .contentPage {width:100%; margin:0; padding:0 20px; display:inline-block; }
+.contentWrapper .contentPage h4 {margin: 25px 0;}
+
+.contentWrapper .contentMenu {width:100%; height:60px; display:block; background:#eaeaea; box-shadow: 0px 4px 6px #000; max-width:none; position:relative;}
+.contentWrapper .contentMenu a {width:100%; padding: 20px; display:inline-block;}
+.contentWrapper .contentMenu h4 {font-size:20px; color:#000; letter-spacing:1px; float:left; position:relative; top:3px;}
+.contentWrapper .contentMenu i {width:11px; height:7px; background-position:-71px -23px; position:relative; top:6px; left:5px; margin-right:30px; float:left; display:inline-block;}
+.contentWrapper  .contentMenu.opened a i {background-position: -71px 0px;}
+
+.contentWrapper .contentMenuList {background:#eaeaea; position: absolute; width: 100%; padding:0 20px; top: 60px; max-width:none; border-top:1px solid #dbdbdb; z-index:2; display:none;}
+.contentWrapper  .contentMenu.opened .contentMenuList  {display:inline-block;}
+.contentWrapper .contentMenuList ul li a {width:100%; padding:13px 20px 8px 40px; border-bottom:1px solid #dbdbdb; display:inline-block;}
+.contentWrapper .contentMenuList ul li a:hover {color:#000;}
+.contentWrapper .contentMenuList ul li a.active {font-size:18px; color:#000; letter-spacing:1px;}
+.contentWrapper .mobilMenuSelect {width:100%; display:inline-block;}
+
 }
+
