@@ -6,7 +6,7 @@
 <link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-
+<script type="text/javascript" src="js/custom-plugins.js"></script>
 </head>
 
 <body class="homePage hideMenu basketEmpty">
@@ -258,11 +258,19 @@
 					<div class="sliderImg"><img src="images/banner/slider/pizza.png" border="0" /></div>
 				
 				</li>
+                
+                <li>
+				
+					<div class="sliderText"><img src="images/banner/slider/sliderText.png" border="0" /></div>
+					<div class="sliderImg"><img src="images/banner/slider/pizza.png" border="0" /></div>
+				
+				</li>
 			
 			</ul>
 		</div>
 		
-		<div class="sliderNav">
+		<!--
+        <div class="sliderNav">
 			<div class="navInner">
 				<ul>
 				
@@ -274,7 +282,8 @@
 				</ul>
 			</div>
 		</div>
-		
+		-->
+        
 	</div>
 
 </div>
@@ -434,6 +443,8 @@
 	
 </div>
 
+<script type="text/javascript" src="js/allscripts.js"></script>
+
 <script type="text/javascript">
 
 /////////////////////////////////////////////////////////
@@ -586,6 +597,10 @@ $('.popupClose a, .popupLink a').click(function () {
   
 
 });
+
+/**/
+if( $('.sliderWrapper').length > 0 )
+	$('.sliderWrapper').minusSimpleSlider({ divName: { mask: '.slider', ul: '> ul', li: '> li' }, nav: false, bulletClass: { wrapper: 'sliderNav', mask: 'navInner' }, infinite: false, rotate: true });
 
 
 /////////////////////////////////////////////////////////
